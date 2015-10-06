@@ -13,7 +13,7 @@
 		    var postdata = $('#contact-form').serialize();
 		    $.ajax({
 		        type: 'POST',
-		        url: 'http://actmob.ngrok.com/api/send/def', //http://actmob.ngrok.com/api/send/def |
+		        url: 'https://actmob-api.herokuapp.com/api/send/adc9bc6', //http://actmob.ngrok.com/api/send/def | https://actmob-api.herokuapp.com/api/send/adc9bc6
 		        data: postdata,
 		        dataType: 'json',
 	          crossDomain:true,
@@ -31,7 +31,7 @@
 		            }
 		            if(json.success) {
 		                $('#contact-form').fadeOut('fast', function() {
-		                    $('#contact .row .form-wrapper').append('<div class="col-sm-6 col-md-offset-1 font-lang"><h3>預約已經發送，謝謝您！</h3></div>');
+		                    $('#contact .row .form-wrapper').append('<div class="font-lang text-center"><h3>預約已經發送，謝謝您！</h3></div>');
 		                });
 		            }
 		        }

@@ -66,7 +66,7 @@
 				<div class="hs-title-size-2 font-alt mb-30">
 					PENG CHENG TRAVEL
 				</div>
-				<div class="hs-title-size-4 font-lang mb-40">
+				<div class="hs-title-size-4 font-lang font-bold mb-40">
 					鹏程旅行
 				</div>
 				<a href="#contact" class="section-scroll btn btn-border-w btn-round font-lang">点击预约</a>
@@ -87,7 +87,7 @@
 
 					<div class="col-sm-6 col-sm-offset-3">
 
-						<h2 class="module-title font-alt">预约时间</h2>
+						<h2 class="module-title font-lang">预约时间</h2>
 
 					</div>
 
@@ -100,24 +100,36 @@
 						<form id="contact-form" role="form" novalidate="">
 
 							<div class="form-group">
-								<label class="sr-only" for="cname">Name</label>
-								<input type="text" id="cname" class="form-control" name="cname" placeholder="Name*" required="" data-validation-required-message="Please enter your name.">
+								<label class="sr-only" for="cname">您的姓名</label>
+								<input type="text" id="cname" class="form-control input-lg" name="name" placeholder="姓名*" required="" data-validation-required-message="请填写您的姓名.">
 								<p class="help-block text-danger"></p>
 							</div>
 
 							<div class="form-group">
-								<label class="sr-only" for="contact-email">Your Email</label>
-								<input type="email" id="contact-email" name="cemail" class="form-control" placeholder="Your E-mail*" required="" data-validation-required-message="Please enter your email address.">
+								<label class="sr-only" for="contact-phone">您的电话</label>
+								<input type="text" id="contact-phone" name="phone" class="form-control input-lg" placeholder="电话号码*" required="" data-validation-required-message="请填写您的电话.">
 								<p class="help-block text-danger"></p>
 							</div>
 
 							<div class="form-group">
-								<textarea class="form-control" id="cmessage" name="cmessage" rows="7" placeholder="Message*" required="" data-validation-required-message="Please enter your message."></textarea>
+								<label class="sr-only" for="contact-email">您的电子邮箱</label>
+								<input type="email" id="contact-email" name="email" class="form-control input-lg" placeholder="E-mail*" required="" data-validation-required-message="请填写您的电子邮箱.">
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<div class="form-group">
+								<label class="sr-only" for="contact-time">预约时间</label>
+								<input type="text" id="contact-time" name="time" class="form-control input-lg" placeholder="预约时间，比如：星期六，11月18日下午6点*" required="" data-validation-required-message="">
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<div class="form-group">
+								<textarea class="form-control input-lg" id="cmessage" name="message" rows="7" placeholder="请在这里留言*" required="" data-validation-required-message="请在这里留言."></textarea>
 								<p class="help-block text-danger"></p>
 							</div>
 
 							<div class="text-center">
-								<button type="submit" class="btn btn-block btn-round btn-d">Submit</button>
+								<button type="submit" class="btn btn-lg btn-block btn-round btn-d btn-contact">点击预约</button>
 							</div>
 
 						</form>
