@@ -6,45 +6,36 @@
 		 * Contact form ajax
 		/* ---------------------------------------------- */
 
-		$('#contact-form').find('input,textarea').jqBootstrapValidation({
-			preventSubmit: true,
-			submitError: function($form, event, errors) {
-				// additional error messages or events
-			},
-			submitSuccess: function($form, event) {
-				event.preventDefault();
+		$('#contact-form').submit(function(e) {
+			e.preventDefault();
+		    $('#contact-form input[type="text"], #contact-form form textarea').removeClass('contact-error');
+				$('.btn-contact').attr('disabled', 'disabled');
+		    var postdata = $('#contact-form').serialize();
+		    $.ajax({
+		        type: 'POST',
+		        url: 'http://actmob.ngrok.com/api/send/def', //http://actmob.ngrok.com/api/send/def |
+		        data: postdata,
+		        dataType: 'json',
+	          crossDomain:true,
+		        success: function(json) {
+								$('.btn-contact').attr('disabled', null);
 
-				var submit          = $('#contact-form submit');
-				var ajaxResponse    = $('#contact-response');
-
-				var name            = $("input#cname").val();
-				var email           = $("input#cemail").val();
-				var message         = $("textarea#cmessage").val();
-
-				$.ajax({
-					type: 'POST',
-					url: 'assets/php/contact.php',
-					dataType: 'json',
-					data: {
-						name: name,
-						email: email,
-						message: message,
-					},
-					cache: false,
-					beforeSend: function(result) {
-						submit.empty();
-						submit.append('<i class="fa fa-cog fa-spin"></i> Wait...');
-					},
-					success: function(result) {
-						if(result.sendstatus == 1) {
-							ajaxResponse.html(result.message);
-							$form.fadeOut(500);
-						} else {
-							ajaxResponse.html(result.message);
-						}
-					}
-				});
-			}
+		            if(json.emailMessage !== '') {
+		                $('#contact-form .contact-email').addClass('contact-error');
+		            }
+		            if(json.phoneMessage !== '') {
+		                $('#contact-form .contact-subject').addClass('contact-error');
+		            }
+		            if(json.messageMessage !== '') {
+		                $('#contact-form textarea').addClass('contact-error');
+		            }
+		            if(json.success) {
+		                $('#contact-form').fadeOut('fast', function() {
+		                    $('#contact .row .form-wrapper').append('<div class="col-sm-6 col-md-offset-1 font-lang"><h3>預約已經發送，謝謝您！</h3></div>');
+		                });
+		            }
+		        }
+		    });
 		});
 
 	});
