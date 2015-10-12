@@ -4,9 +4,9 @@ Version: 1.5.1
 ------------------------------------------------------------------ */
 
 @import url("slider.css");
-@import url("http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
+/*@import url("http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700");
-@import url("http://fonts.googleapis.com/css?family=Volkhov:400italic");
+@import url("http://fonts.googleapis.com/css?family=Volkhov:400italic");*/
 
 /* ------------------------------------------------------------------
 General Styles
@@ -1379,6 +1379,10 @@ Portfolio
 	padding: 0 0 10px 10px;
 }
 
+#works-grid-1 {
+	min-height: 300px;
+}
+
 .work-item {
 	width: 50%;
 	float: left;
@@ -2161,9 +2165,10 @@ Scroll to top
 }
 
 .features-icon {
-	height: 120px;
+	height: 180px;
 	background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .features-icon span{
@@ -2229,6 +2234,21 @@ Scroll to top
 }
 .a-20 {
 	background-image: url(../img/a20.jpg);
+}
+.a-21 {
+	background-image: url(../img/a21.jpg);
+}
+.a-22 {
+	background-image: url(../img/a22.jpg);
+}
+.a-23 {
+	background-image: url(../img/a23.jpg);
+}
+.a-24 {
+	background-image: url(../img/a24.jpg);
+}
+.a-25 {
+	background-image: url(../img/a25.jpg);
 }
 
 /* -------------------------------------------------------------------
@@ -2664,6 +2684,12 @@ Vertival margin, padding
 	.mb-sm-70 {margin-bottom:70px !important}
 	.mb-sm-80 {margin-bottom:80px !important}
 
+	.features-icon {
+		height: 220px;
+		background-size: cover;
+	  background-repeat: no-repeat;
+	}
+
 }
 
 @media only screen and (max-width:767px) {
@@ -2687,5 +2713,11 @@ Vertival margin, padding
 	.mb-xs-60 {margin-bottom:60px !important}
 	.mb-xs-70 {margin-bottom:70px !important}
 	.mb-xs-80 {margin-bottom:80px !important}
+
+	.features-icon {
+		height: 240px;
+		background-size: cover;
+	  background-repeat: no-repeat;
+	}
 
 }
