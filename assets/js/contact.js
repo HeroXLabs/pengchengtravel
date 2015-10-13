@@ -8,8 +8,19 @@
 
 		$('#contact-form').submit(function(e) {
 			e.preventDefault();
-		    $('#contact-form input[type="text"], #contact-form form textarea').removeClass('contact-error');
+		    if($('#contact-phone').val().trim() === '') {
+					$('#contact-phone').addClass('contact-error');
+					return;
+				}
+
+				if($('#cname').val().trim() === '') {
+					$('#cname').addClass('contact-error');
+					return;
+				}
+
+				$('#contact-form input[type="text"], #contact-form form textarea').removeClass('contact-error');
 				$('.btn-contact').attr('disabled', 'disabled');
+
 		    var postdata = $('#contact-form').serialize();
 		    $.ajax({
 		        type: 'POST',
