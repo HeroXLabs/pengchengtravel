@@ -24,7 +24,7 @@
 		    var postdata = $('#contact-form').serialize();
 		    $.ajax({
 		        type: 'POST',
-		        url: 'https://actmob-api.herokuapp.com/api/send/adc9bc6', //http://actmob.ngrok.com/api/send/def | https://actmob-api.herokuapp.com/api/send/adc9bc6
+		        url: 'http://actmob-api.heyookapp.com/api/send/adc9bc6', //http://actmob.ngrok.com/api/send/def | https://actmob-api.heyookapp.com/api/send/adc9bc6
 		        data: postdata,
 		        dataType: 'json',
 	          crossDomain:true,
